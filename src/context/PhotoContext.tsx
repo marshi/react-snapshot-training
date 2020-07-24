@@ -5,19 +5,13 @@ import {Photo, Photos, PhotosResponse} from "./Photos";
 
 export const PhotoContext = createContext({
   images: Array<Photo>(),
-  search: (query: string) => {},
+  search: (query: string) => {
+  },
 })
 
 type Props = {
   children: React.ReactNode
 }
-
-type PhotoContextData = {
-  images: Array<Photo>
-  search: (query: string) => void
-}
-
-type Result = {}
 
 export const PhotoContextProvider = (props: Props) => {
   const [images, setImages] = useState(Array<Photo>())

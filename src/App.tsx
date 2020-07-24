@@ -28,7 +28,7 @@ function App() {
           }}>
           </Route>
           <Switch>
-            <Route exact path="/" render={() => <Redirect to="/mountain"/>}/>
+            <Route exact path="/" render={() => <Redirect to="/search/mountain"/>}/>
             <Route
               path={"/search/:searchInput"}
               render={props => <Search query={props.match.params.searchInput}/>}/>
