@@ -19,14 +19,10 @@ export class Photo {
 
   constructor(
     id: string,
-    owner: string,
     secret: string,
     server: string,
     farm: number,
     title: string,
-    ispublic: number,
-    isfriend: number,
-    isfamily: number
   ) {
     this.id = id
     this.title = title

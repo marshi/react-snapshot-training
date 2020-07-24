@@ -1,8 +1,13 @@
-import React, {ChangeEvent, ChangeEventHandler, FormEvent, useState} from 'react';
-
+import React, {ChangeEvent, FormEvent, useState} from 'react';
 import "./Form.css"
+import * as H from "history"
 
-const Form = () => {
+type Props = {
+  history: H.History
+  handleSubmit: (e: FormEvent, query: string, history: H.History) => void
+}
+
+const Form = (props: Props) => {
 
   const [query, setQuery] = useState("")
 
@@ -12,7 +17,10 @@ const Form = () => {
   }
 
   return (
-    <form className="form">
+    <form
+      className="form"
+      onSubmit={e => props.handleSubmit(e, query, props.history)}
+    >
       <input
         type="text"
         name="search"
@@ -31,7 +39,7 @@ const Form = () => {
         </svg>
       </button>
     </form>
-  );
-};
+  )
+}
 
 export default Form;
