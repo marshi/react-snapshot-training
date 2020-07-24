@@ -1,0 +1,4 @@
+.gallery ul {
+  display: flex;
+  flex-flow: wrap row;
+}
