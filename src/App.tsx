@@ -5,19 +5,22 @@ import {HashRouter, Route, Switch, Redirect} from "react-router-dom";
 import {Gallery} from "./components/Gallery";
 
 import "./index.css"
+import {PhotoContext, PhotoContextProvider} from "./context/PhotoContext";
 
 function App() {
   return (
-    <HashRouter basename="/SnapScout">
-      <div className="container">
-        <Switch>
-          <Route exact path="/" render={() => <Redirect to="/mountain"/>}/>
-        </Switch>
-        <div>
-          <Gallery/>
+    <PhotoContextProvider>
+      <HashRouter basename="/SnapScout">
+        <div className="container">
+          <Switch>
+            <Route exact path="/" render={() => <Redirect to="/mountain"/>}/>
+          </Switch>
+          <div>
+            <Gallery/>
+          </div>
         </div>
-      </div>
-    </HashRouter>
+      </HashRouter>
+    </PhotoContextProvider>
   )
 }
 
