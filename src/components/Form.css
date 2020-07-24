@@ -1,0 +1,19 @@
+.form {
+  max-width: 460px;
+  margin: 0px auto 32px;
+  display: flex;
+}
+
+.form button {
+  cursor: pointer;
+}
+
+.active {
+  background-color: #051c33;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+}
